@@ -1,0 +1,36 @@
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "email":"fdafdss@fad.fs",
+  "password":"fdsflasdg"
+}
+
+### サインイン
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email":"fdafdss@fad.fs",
+  "password":"fdsflasdg"
+}
+
+### ユーザー検索
+GET http://localhost:3000/auth/1
+
+### email検索
+GET http://localhost:3000/auth?email=fdas@fad.fs
+
+### 全ユーザー検索
+GET http://localhost:3000/auth
+
+### ユーザー削除
+DELETE http://localhost:3000/auth/3
+
+### ユーザー情報のアップデート
+PATCH http://localhost:3000/auth/2
+Content-Type: application/json
+
+{
+  "email":"test@test.com"
+}
