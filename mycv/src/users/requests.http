@@ -31,7 +31,7 @@ GET http://localhost:3000/auth?email=fdas@fad.fs
 GET http://localhost:3000/auth
 
 ### ユーザー削除
-DELETE http://localhost:3000/auth/3
+DELETE http://localhost:3000/auth/1
 
 ### ユーザー情報のアップデート
 PATCH http://localhost:3000/auth/2
