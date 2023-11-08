@@ -1,0 +1,25 @@
+### サインイン
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email":"test@test.com",
+  "password":"12345"
+}
+
+### サインアウト
+POST http://localhost:3000/auth/signout
+
+### aaa
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+  "make":"toyota",
+  "model":"carolla",
+  "year":1980,
+  "mileage":100000,
+  "lng":0,
+  "lat":0,
+  "price":500000
+}
