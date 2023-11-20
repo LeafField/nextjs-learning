@@ -3,7 +3,7 @@ POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-  "email":"test@test.com",
+"email":"test@test.com",
   "password":"12345"
 }
 
@@ -18,7 +18,7 @@ Content-Type: application/json
   "make":"toyota",
   "model":"carolla",
   "year":1980,
-  "mileage":100000,
+  "mileage":20000,
   "lng":0,
   "lat":0,
   "price":500000
@@ -31,3 +31,6 @@ Content-Type: application/json
 {
   "approved":true
 }
+
+### Get an estimate for an exiting vehicle
+GET GET http://localhost:3000/reports?make=toyota&model=corolla&lng=0&lat=0&mileage=20000&year=1980
