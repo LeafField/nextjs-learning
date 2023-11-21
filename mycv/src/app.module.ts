@@ -24,17 +24,18 @@ const cookieSession = require('cookie-session');
     }),
     UsersModule,
     ReportsModule,
-    TypeOrmModule.forRootAsync({
-      inject: [ConfigService],
-      useFactory: (config: ConfigService) => {
-        return {
-          type: 'sqlite',
-          database: config.get<string>('DB_NAME'),
-          entities: [User, Report],
-          synchronize: true,
-        };
-      },
-    }),
+    TypeOrmModule.forRoot(),
+    // TypeOrmModule.forRootAsync({
+    //   inject: [ConfigService],
+    //   useFactory: (config: ConfigService) => {
+    //     return {
+    //       type: 'sqlite',
+    //       database: config.get<string>('DB_NAME'),
+    //       entities: [User, Report],
+    //       synchronize: true,
+    //     };
+    //   },
+    // }),
     // TypeOrmModule.forRoot({
     //   type: 'sqlite',
     //   database: 'db.sqlite',
@@ -49,11 +50,13 @@ const cookieSession = require('cookie-session');
   ],
 })
 export class AppModule implements NestModule {
+  constructor(private configService: ConfigService) {}
+
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(
         cookieSession({
-          keys: ['fhaldsfd'],
+          keys: [this.configService.get('COOKIE_KEY')],
         }),
       )
       .forRoutes('*');

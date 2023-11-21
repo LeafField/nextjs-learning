@@ -15,13 +15,13 @@ POST http://localhost:3000/reports
 Content-Type: application/json
 
 {
-  "make":"toyota",
-  "model":"carolla",
-  "year":1980,
-  "mileage":20000,
-  "lng":0,
-  "lat":0,
-  "price":500000
+  "make":"ford",
+  "model":"mustang",
+  "year":1982,
+  "mileage":50000,
+  "lng":45,
+  "lat":45,
+  "price":20000
 }
 
 ### Approve an exiting report
@@ -33,4 +33,11 @@ Content-Type: application/json
 }
 
 ### Get an estimate for an exiting vehicle
-GET GET http://localhost:3000/reports?make=toyota&model=corolla&lng=0&lat=0&mileage=20000&year=1980
+GET http://localhost:3000/reports?make=toyota&model=corolla&lng=0&lat=0&mileage=20000&year=1980
+
+
+
+### Get an estimate for an exiting vehicle
+GET http://localhost:3000/reports?make=ford&model=mustang&lng=45&lat=45&mileage=20000&year=1981
+
+
